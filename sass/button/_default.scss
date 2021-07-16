@@ -1,0 +1,35 @@
+button.btn {
+    --rippleColor: rgba(0, 0, 0, 0.2);
+    --rippleDuration: 800ms;
+    padding: .5em 1em;
+    margin: .1em;
+    border: 0;
+    // border: 1px solid #333;
+    border-radius: .2em;
+    background-color: #eee;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Roboto", "sans-serif";
+
+    span {
+        position: absolute;
+        width: 0;
+        height: 0;
+        background: var(--rippleColor);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        animation: ripple var(--rippleDuration);
+    }
+}
+
+@keyframes ripple {
+    to {
+        width: calc(2 * var(--width) + 1px);
+        height: calc(2 * var(--width) + 1px);
+        opacity: 0;
+    }
+}

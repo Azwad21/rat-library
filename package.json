@@ -1,0 +1,21 @@
+{
+  "name": "rat-library",
+  "version": "1.0.0",
+  "description": "A web Library.",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --progress",
+    "sass": "sass ./sass/style.scss:./build/css/rat-library.bundle.css --watch",
+    "sassMin": "sass ./sass/style.scss:./build/css/rat-library.bundle.min.css --watch --style=compressed"
+  },
+  "author": "Azwad",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/parser": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

@@ -1,0 +1,9 @@
+@use "sass:color";
+@use "../variables.scss" as var;
+
+button.btn.success {
+    --rippleColor: #{color.change(#fff, $alpha: 0.2)};
+    border: 0;
+    background: var.$success;
+    color: #fff;
+}
