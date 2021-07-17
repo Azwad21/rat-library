@@ -17,5 +17,8 @@
     "babel-loader": "^8.2.2",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "color": "^4.0.0"
   }
 }

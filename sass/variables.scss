@@ -1,6 +1,6 @@
 @use "sass:color";
 
 $primary: dodgerBlue;
-$danger: #{color.change(red, $lightness: 60%)};
-$warning: #{color.change(gold, $saturation: 80%)};
-$success: #{color.change(green, $lightness: 30%)};
+$danger: color.change(red, $lightness: 60%);
+$warning: color.change(gold, $saturation: 80%);
+$success: color.change(green, $lightness: 30%);

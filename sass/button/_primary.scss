@@ -1,8 +1,10 @@
 @use "sass:color";
 @use "../variables.scss" as var;
 
-button.btn.primary {
-    --rippleColor: #{color.change(#fff, $alpha: 0.2)};
+button.rat-btn.primary {
+    // --rippleColor: #{color.change(#fff, $alpha: #{"var(--rippleOpacity)"})};
+    --rippleColor: #{rgba(#fff, #{"var(--rippleOpacity)"})};
+    --boxShadowProp: 0 0 0 4px #{rgba(var.$primary, 0.3)};
     border: 0;
     background: var.$primary;
     color: #fff;

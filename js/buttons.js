@@ -1,24 +1,17 @@
-import {buttons} from "./variables";
+import { buttons } from "./variables";
+import * as Color from "color";
 
-if ((!buttons == undefined || null) || !buttons.length == 0)  {
-    buttons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            let x = e.clientX - button.offsetLeft;
-            let y = e.clientY - button.offsetTop;
+// console.log(Color)
 
-            let span = document.createElement("span");
-            span.style.left = `${x}px`;
-            span.style.top = `${y}px`;
+buttons.forEach(button => {
+    if (button.classList.contains("outline")) {
+        let bg_color = getComputedStyle(button).getPropertyValue("background-color");
 
-            let rippleDuration =  parseInt(getComputedStyle(button).getPropertyValue("--rippleDuration"));
-
-            // console.trace(button)
-            button.style.cssText += `--width: ${button.getBoundingClientRect().width}px;`;
-            button.appendChild(span)
-
-            setTimeout(() => {
-                span.remove()
-            }, rippleDuration)
-        })
-    })
-}
+        button.style.cssText += `
+            background-color: transparent;
+            color: ${bg_color};
+            border: 1px solid ${bg_color};
+            --rippleColor: ${Color(bg_color).alpha(0.3).string()};
+        `;
+    }
+})

@@ -1,6 +1,8 @@
-button.btn {
-    --rippleColor: rgba(0, 0, 0, 0.2);
+button.rat-btn {
+    --rippleOpacity: 0.2;
+    --rippleColor: rgba(0, 0, 0, var(--rippleOpacity));
     --rippleDuration: 800ms;
+    --rippleTimingFunction: ease;
     padding: .5em 1em;
     margin: .1em;
     border: 0;
@@ -15,6 +17,16 @@ button.btn {
     user-select: none;
     font-family: "Roboto", "sans-serif";
 
+    &.small {
+        padding: .3em .6em;
+        font-size: 13px;
+    }
+
+    &.medium {
+        padding: .5em .8em;
+        font-size: 14px;
+    }
+
     span {
         position: absolute;
         width: 0;
@@ -22,7 +34,7 @@ button.btn {
         background: var(--rippleColor);
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        animation: ripple var(--rippleDuration);
+        animation: ripple var(--rippleDuration) var(--rippleTimingFunction);
     }
 }
 

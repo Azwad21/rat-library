@@ -1,8 +1,12 @@
 @use "sass:color";
+@use "sass:string";
 @use "../variables.scss" as var;
 
-button.btn.warning {
-    --rippleColor: #{color.change(#000, $alpha: 0.1)};
+button.rat-btn.warning {
+    --rippleOpacity: 0.1;
+    // --rippleColor: #{color.change(#000, $alpha: var(--rippleOpacity))};
+    --rippleColor: #{rgba(#000, #{"var(--rippleOpacity)"})};
+    --boxShadowProp: 0 0 0 4px #{rgba(var.$warning, 0.3)};
     border: 0;
     background: var.$warning;
     color: #{color.change(#000, $alpha: 0.6)};
